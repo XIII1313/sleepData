@@ -151,22 +151,22 @@ def handle_messages():
                            
                     if first_word.lower() == "add":
                         if comment == "":
-                        	try:
-                           		main_def("None")
-								botReply = "Updated the data with comment None."
-								send_message(sender_id, botReply)
-							except:
-								botReply = "An error has occurred."
-								send_message(sender_id, botReply)
+                            try:
+                                main_def("None")
+				botReply = "Updated the data with comment None."
+				send_message(sender_id, botReply)
+                            except:
+				botReply = "An error has occurred."
+				send_message(sender_id, botReply)
 								
                         else:
-                           	try:
-                           		main_def(comment)
-								botReply = "Updated the data with comment None."
-                        		send_message(sender_id, botReply)
-							except:
-								botReply = "An error has occurred."
-								send_message(sender_id, botReply)
+                            try:
+                                main_def(comment)
+                                botReply = "Updated the data with comment {}.".format(comment)
+                                send_message(sender_id, botReply)
+                            except:
+                                botReply = "An error has occurred."
+                                send_message(sender_id, botReply)
 
                     else:
                         botReply = "Sorry, I do not understand this message."
@@ -182,7 +182,7 @@ def handle_messages():
                 if messaging_event.get("postback"):
                     pass
 
-	return "ok", 200
+    return "ok", 200
 
 
 def send_message(recipient_id, message_text):
