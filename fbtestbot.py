@@ -40,7 +40,7 @@ sleep_sheet = client.open("sleep").sheet1
 
 
 def refresh_credentials():
-	global scope, creds, client
+    global scope, creds, client
     global sleep_sheet
     print("Refreshing credentials ...")
     scope = ['https://spreadsheets.google.com/feeds',
